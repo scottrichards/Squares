@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		01156C6927C532F2003A3C55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01156C6827C532F2003A3C55 /* AppDelegate.swift */; };
-		01156C6B27C532F2003A3C55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01156C6A27C532F2003A3C55 /* ViewController.swift */; };
+		01156C6B27C532F2003A3C55 /* SquareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01156C6A27C532F2003A3C55 /* SquareViewController.swift */; };
 		01156C6D27C532F4003A3C55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01156C6C27C532F4003A3C55 /* Assets.xcassets */; };
 		01156C7027C532F4003A3C55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01156C6E27C532F4003A3C55 /* Main.storyboard */; };
 		01156C7B27C532F4003A3C55 /* SquaresTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01156C7A27C532F4003A3C55 /* SquaresTests.swift */; };
 		01156C8527C532F4003A3C55 /* SquaresUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01156C8427C532F4003A3C55 /* SquaresUITests.swift */; };
 		01156C8727C532F4003A3C55 /* SquaresUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01156C8627C532F4003A3C55 /* SquaresUITestsLaunchTests.swift */; };
+		01156C9427C549C1003A3C55 /* ColorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01156C9327C549C1003A3C55 /* ColorType.swift */; };
+		01156C9727C549F7003A3C55 /* CGColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01156C9627C549F7003A3C55 /* CGColor+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +38,7 @@
 /* Begin PBXFileReference section */
 		01156C6527C532F2003A3C55 /* Squares.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Squares.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01156C6827C532F2003A3C55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		01156C6A27C532F2003A3C55 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		01156C6A27C532F2003A3C55 /* SquareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquareViewController.swift; sourceTree = "<group>"; };
 		01156C6C27C532F4003A3C55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		01156C6F27C532F4003A3C55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		01156C7127C532F4003A3C55 /* Squares.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Squares.entitlements; sourceTree = "<group>"; };
@@ -45,6 +47,8 @@
 		01156C8027C532F4003A3C55 /* SquaresUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SquaresUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01156C8427C532F4003A3C55 /* SquaresUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquaresUITests.swift; sourceTree = "<group>"; };
 		01156C8627C532F4003A3C55 /* SquaresUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquaresUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		01156C9327C549C1003A3C55 /* ColorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorType.swift; sourceTree = "<group>"; };
+		01156C9627C549F7003A3C55 /* CGColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGColor+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +99,13 @@
 		01156C6727C532F2003A3C55 /* Squares */ = {
 			isa = PBXGroup;
 			children = (
+				01156C9527C549E7003A3C55 /* Extensions */,
 				01156C6827C532F2003A3C55 /* AppDelegate.swift */,
-				01156C6A27C532F2003A3C55 /* ViewController.swift */,
+				01156C6A27C532F2003A3C55 /* SquareViewController.swift */,
 				01156C6C27C532F4003A3C55 /* Assets.xcassets */,
 				01156C6E27C532F4003A3C55 /* Main.storyboard */,
 				01156C7127C532F4003A3C55 /* Squares.entitlements */,
+				01156C9327C549C1003A3C55 /* ColorType.swift */,
 			);
 			path = Squares;
 			sourceTree = "<group>";
@@ -119,6 +125,14 @@
 				01156C8627C532F4003A3C55 /* SquaresUITestsLaunchTests.swift */,
 			);
 			path = SquaresUITests;
+			sourceTree = "<group>";
+		};
+		01156C9527C549E7003A3C55 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				01156C9627C549F7003A3C55 /* CGColor+.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,7 +265,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01156C6B27C532F2003A3C55 /* ViewController.swift in Sources */,
+				01156C6B27C532F2003A3C55 /* SquareViewController.swift in Sources */,
+				01156C9727C549F7003A3C55 /* CGColor+.swift in Sources */,
+				01156C9427C549C1003A3C55 /* ColorType.swift in Sources */,
 				01156C6927C532F2003A3C55 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
