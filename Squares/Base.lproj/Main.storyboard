@@ -684,7 +684,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Colors" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -701,10 +701,10 @@
             </objects>
             <point key="canvasLocation" x="81" y="227"/>
         </scene>
-        <!--Square View Controller-->
+        <!--Colors-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="SquareViewController" customModule="Squares" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Colors" id="XfG-lQ-9wD" customClass="SquareViewController" customModule="Squares" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1015" height="720"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -717,11 +717,7 @@
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="ugQ-oF-by4">
                                         <items>
-                                            <menuItem title="Red" state="on" id="yf6-9C-XWZ">
-                                                <connections>
-                                                    <action selector="didChangeColor:" target="XfG-lQ-9wD" id="yd7-nZ-yOR"/>
-                                                </connections>
-                                            </menuItem>
+                                            <menuItem title="Red" state="on" id="yf6-9C-XWZ"/>
                                             <menuItem title="Blue" id="RrI-k4-oUg"/>
                                             <menuItem title="Green" id="pzn-jP-FJD"/>
                                             <menuItem title="Cyan" id="oX6-b3-xsR"/>
@@ -730,9 +726,9 @@
                                             <menuItem title="Gray" id="ivQ-97-ump" userLabel="Gray"/>
                                             <menuItem title="White" id="TBu-tb-GSR" userLabel="White"/>
                                             <menuItem title="Black" id="YQR-9S-1Gc" userLabel="Black"/>
-                                            <menuItem title="Gray Pattern PNG" id="ME5-b4-6ly" userLabel="Gray Pattern PNG"/>
+                                            <menuItem title="Gray Scale PNG" id="ME5-b4-6ly" userLabel="Gray Scale PNG"/>
                                             <menuItem title="Color Pattern PNG" id="dXq-Y9-N4y" userLabel="Color Pattern PNG"/>
-                                            <menuItem title="Gray Pattern PDF" id="VoP-dL-DHy" userLabel="Gray Pattern PDF"/>
+                                            <menuItem title="Gray Scale PDF" id="VoP-dL-DHy" userLabel="Gray Scale PDF"/>
                                             <menuItem title="Color Pattern PDF" id="Kcc-5u-YKN" userLabel="Color Pattern PDF"/>
                                         </items>
                                     </menu>
@@ -743,22 +739,18 @@
                             </popUpButton>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="L9b-f3-Cnk">
                                 <rect key="frame" x="245" y="98" width="525" height="525"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kvq-kA-A7e">
+                                        <rect key="frame" x="0.0" y="0.0" width="525" height="525"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="nFG-eX-Enp"/>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="525" id="fY9-XX-Zqc"/>
                                     <constraint firstAttribute="height" constant="525" id="uOe-iw-UwE"/>
                                 </constraints>
                             </customView>
-                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zbj-Fe-uh7">
-                                <rect key="frame" x="606" y="653" width="91" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <buttonCell key="cell" type="push" title="Update" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="oav-CP-hMp">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="onUpdate:" target="XfG-lQ-9wD" id="cS4-wZ-iwd"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="L9b-f3-Cnk" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Ue0-3r-7gV"/>
@@ -767,6 +759,7 @@
                     </view>
                     <connections>
                         <outlet property="colorPullDownMenu" destination="6I4-7a-eCV" id="4v2-g2-wyk"/>
+                        <outlet property="imageView" destination="Kvq-kA-A7e" id="yyd-7g-z8v"/>
                         <outlet property="squareView" destination="L9b-f3-Cnk" id="ld2-os-g0K"/>
                     </connections>
                 </viewController>

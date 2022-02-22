@@ -10,8 +10,8 @@ import AppKit
 
 enum MenuType {
     case Color
-    case PNG
-    case PDF
+    case Asset
+
 }
 
 struct MenuItem {
@@ -25,6 +25,7 @@ struct MenuItem {
 class SquareViewController: NSViewController {
     @IBOutlet weak var squareView: NSView!
     @IBOutlet weak var colorPullDownMenu: NSPopUpButton!
+    @IBOutlet weak var imageView: NSImageView!
     
     let colorTypes: [MenuItem] =
     [ MenuItem(title: ColorType.Red.rawValue, type: .Color, color: .Red, assetName: nil),
@@ -36,32 +37,33 @@ class SquareViewController: NSViewController {
       MenuItem(title: ColorType.Gray.rawValue, type: .Color, color: .Gray, assetName: nil),
       MenuItem(title: ColorType.White.rawValue, type: .Color, color: .White, assetName: nil),
       MenuItem(title: ColorType.Black.rawValue, type: .Color, color: .Black, assetName: nil),
+      MenuItem(title: "Gray Scale PNG", type: .Asset, color: nil, assetName: "Gray Scale PNG"),
+      MenuItem(title: "Color Pattern PNG", type: .Asset, color: nil, assetName: "Color Pattern PNG"),
+      MenuItem(title: "Gray Scale PDF", type: .Asset, color: nil, assetName: "Gray Scale PDF"),
+      MenuItem(title: "Color Pattern PDF", type: .Asset, color: nil, assetName: "Color Pattern PDF")
         ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         squareView.wantsLayer = true
         squareView.layer?.backgroundColor = ColorType.Red.color
-        
-        // Do any additional setup after loading the view.
+        imageView.isHidden = true
     }
 
 
     /// Update the color of the background of squareView to the selected color
     func updateColor(_ color: ColorType) {
+        imageView.isHidden = true
         squareView.layer?.backgroundColor = color.color
     }
     
     func updateAsset(_ asset: String) {
-        
+        imageView.isHidden = false
+        imageView.image = NSImage(named: asset)
+        squareView.layer?.backgroundColor = nil
     }
     
-    @IBAction func didChangeColor(_ sender: Any) {
-        let selectedItem : Int = colorPullDownMenu.indexOfSelectedItem
-        if let selectedColor = colorTypes[selectedItem].color {
-            updateColor(selectedColor)
-        }
-    }
+    // MARK: Actions
     
     @IBAction func popUpButtonUsed(_ sender: NSPopUpButton) {
         let selectedItem : Int = colorPullDownMenu.indexOfSelectedItem
@@ -70,14 +72,6 @@ class SquareViewController: NSViewController {
         }
         if let selectedAsset = colorTypes[selectedItem].assetName {
             updateAsset(selectedAsset)
-        }
-    }
-    
-    @IBAction func onUpdate(_ sender: Any) {
-        print("onUpdate Button")
-        let selectedItem : Int = colorPullDownMenu.indexOfSelectedItem
-        if let selectedColor = colorTypes[selectedItem].color {
-            updateColor(selectedColor)
         }
     }
     
