@@ -26,6 +26,7 @@ class SquareViewController: NSViewController {
     @IBOutlet weak var squareView: NSView!
     @IBOutlet weak var colorPullDownMenu: NSPopUpButton!
     @IBOutlet weak var imageView: NSImageView!
+    @IBOutlet weak var colorSpaceSquareView: NSView!
     
     let colorTypes: [MenuItem] =
     [ MenuItem(title: ColorType.Red.rawValue, type: .Color, color: .Red, assetName: nil),
@@ -41,12 +42,16 @@ class SquareViewController: NSViewController {
       MenuItem(title: "Color Pattern PNG", type: .Asset, color: nil, assetName: "Color Pattern PNG"),
       MenuItem(title: "Gray Scale PDF", type: .Asset, color: nil, assetName: "Gray Scale PDF"),
       MenuItem(title: "Color Pattern PDF", type: .Asset, color: nil, assetName: "Color Pattern PDF")
-        ]
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.view.window?.colorSpace = .deviceRGB
         squareView.wantsLayer = true
         squareView.layer?.backgroundColor = ColorType.Red.color
+        colorSpaceSquareView.wantsLayer = true
+        colorSpaceSquareView.window?.colorSpace = .extendedSRGB
+        colorSpaceSquareView.layer?.backgroundColor = ColorType.Red.color
         imageView.isHidden = true
     }
 
@@ -55,6 +60,7 @@ class SquareViewController: NSViewController {
     func updateColor(_ color: ColorType) {
         imageView.isHidden = true
         squareView.layer?.backgroundColor = color.color
+        colorSpaceSquareView.layer?.backgroundColor = color.color
     }
     
     func updateAsset(_ asset: String) {

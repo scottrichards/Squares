@@ -738,27 +738,37 @@
                                 </connections>
                             </popUpButton>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="L9b-f3-Cnk">
-                                <rect key="frame" x="245" y="98" width="525" height="525"/>
+                                <rect key="frame" x="115" y="160" width="400" height="400"/>
                                 <subviews>
                                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kvq-kA-A7e">
-                                        <rect key="frame" x="0.0" y="0.0" width="525" height="525"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="nFG-eX-Enp"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="525" id="fY9-XX-Zqc"/>
-                                    <constraint firstAttribute="height" constant="525" id="uOe-iw-UwE"/>
+                                    <constraint firstAttribute="width" constant="400" id="fY9-XX-Zqc"/>
+                                    <constraint firstAttribute="height" constant="400" id="uOe-iw-UwE"/>
+                                </constraints>
+                            </customView>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="hf4-GK-YsK">
+                                <rect key="frame" x="517" y="160" width="400" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="lAz-X6-xbE"/>
+                                    <constraint firstAttribute="width" constant="400" id="qXL-Ag-aQe"/>
                                 </constraints>
                             </customView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="L9b-f3-Cnk" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="Ue0-3r-7gV"/>
-                            <constraint firstItem="L9b-f3-Cnk" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="pva-By-rgI"/>
+                            <constraint firstItem="L9b-f3-Cnk" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="74o-s6-GWm"/>
+                            <constraint firstItem="hf4-GK-YsK" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="RPC-A4-H72"/>
+                            <constraint firstItem="hf4-GK-YsK" firstAttribute="leading" secondItem="L9b-f3-Cnk" secondAttribute="trailing" constant="2" id="h10-lM-g0d"/>
+                            <constraint firstItem="L9b-f3-Cnk" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="115" id="rvr-6x-6hf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="colorPullDownMenu" destination="6I4-7a-eCV" id="4v2-g2-wyk"/>
+                        <outlet property="colorSpaceSquareView" destination="hf4-GK-YsK" id="4Yj-1f-a0j"/>
                         <outlet property="imageView" destination="Kvq-kA-A7e" id="yyd-7g-z8v"/>
                         <outlet property="squareView" destination="L9b-f3-Cnk" id="ld2-os-g0K"/>
                     </connections>
@@ -766,6 +776,19 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="81.5" y="907"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Eke-1L-OM0">
+            <objects>
+                <viewController id="A3b-Iz-Wwc" sceneMemberID="viewController">
+                    <view key="view" id="1Pp-w3-Pqq">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="e5C-Ad-pBj" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="76" y="1483"/>
         </scene>
     </scenes>
 </document>
